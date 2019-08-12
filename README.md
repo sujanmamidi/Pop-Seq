@@ -25,15 +25,15 @@ If all Sites and 100k/10k slides: sliding_windows_frequency("my.vcf.sitetype",wi
 
 ### Step 3: determine cutoffs for the site type using boostraps (Output from Above)
 mydata <- read.table("my.vcf.sitetype_10000_2000_freq_dist.txt", header=TRUE)
+source("/Users/myname/myAnalysis/R_functions")
 
 nsamples <- sapply(1:1000,function(i) sample(mydata$S, replace =T))
 cutoffs <- quantile_cutoffs(nsamples, probs = c(0.95,0.99,0.999),myname="Sites_of_Imp")
 rm(nsamples)
 
-## Extract values form bootstrap table
+#### Extract values form bootstrap table
 sign95 <- cutoffs[1,2]
 sign99 <- cutoffs[2,2]
-
 
 ### Step 4: Manhattan plot using qqman package
 if("qqman" %in% rownames(installed.packages()) == FALSE)

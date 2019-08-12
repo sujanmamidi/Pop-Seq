@@ -14,7 +14,7 @@ Usage:
 The first awk code reads a vcf file (SNP from bulks) and determines the site type. The output is then read into R to create a distribution using sliding windows either for all sites or specific set or based on delta (difference in frequencies of the two bulks)
 
 ### Step 1: Determine SNP Type \n 
-Uncompressed file : cat my.vcf | awk -f identifySnpTypePools.awk > my.vcf.sitetype.   
+Uncompressed file : cat my.vcf | awk -f identifySnpTypePools.awk > my.vcf.sitetype   
 bz2 compressed file : bzip2 -dck my.vcf.bz2 | awk -f identifySnpTypePools.awk > my.vcf.sitetype   
 
 ### Step 2:read the awk input from previous awk step
@@ -52,7 +52,7 @@ dev.off()
 
 
 
-Please cite:
+Please cite:  
 Mamidi, Sujan, Phillip N. Miklas, Jennifer Trapp, Erin Felicetti, Jane Grimwood, Jeremy Schmutz, Rian Lee, and Phillip E. McClean. "Sequence-based introgression mapping identifies candidate white mold tolerance genes in common bean." The plant genome 9, no. 2 (2016).
 
 

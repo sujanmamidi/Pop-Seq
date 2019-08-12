@@ -2,6 +2,9 @@
 
 ######################################################################
 ##        This is a awk code written by Sujan Mamidi                ##
+##                                                                  ## 
+##               This code is licensed under the                    ##
+##                GNU General Public License v3.0                   ##
 ##                                                                  ##
 ## This code reads a vcf file (SNP called from population Bulks) to ##
 ##                      determine the type of site                  ##

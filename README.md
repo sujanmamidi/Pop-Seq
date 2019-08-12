@@ -4,18 +4,17 @@ Identification of QTL for BSA (Bulk Degregant Analysis) and for diverse populati
 Pheotype based bulks are alternative to population based approaches like Bi-Parental QTL mapping and Association mapping.
 SNP frequency differences of these bulks helps identify candidate regions/genes. FIXED sites offer the best resolution for identification of QTL.
 
-There are 4 snp types based on the frequency in each of the bulk.
-Fixed site - Allele frequency is 100% for each of the pop, but Alternate alleles in each of the population.
-Shared site - Both alleles present in both the populations.
+There are 4 snp types based on the frequency in each of the bulk.\n
+Fixed site - Allele frequency is 100% for each of the pop, but Alternate alleles in each of the population.\n
+Shared site - Both alleles present in both the populations.\n
 Unique_pop (Uniq_pop1 and Uniq_pop2) - Allele frequency of one allele is 100% in only one population, but other population has both alleles. 
 
 
 Usage:
-The first awk code reads a vcf file (SNP from bulks) and determines the site type. The output is then read into R to create a distribution using sliding windows either for all sites or specific set or based on delta 
-(difference in frequencies of the two bulks)
+The first awk code reads a vcf file (SNP from bulks) and determines the site type. The output is then read into R to create a distribution using sliding windows either for all sites or specific set or based on delta (difference in frequencies of the two bulks)
 
-### Step 1: Determine SNP Type
-Uncompressed file : cat my.vcf | awk -f identifySnpTypePools.awk > my.vcf.sitetype
+### Step 1: Determine SNP Type \n 
+Uncompressed file : cat my.vcf | awk -f identifySnpTypePools.awk > my.vcf.sitetype \n
 bz2 compressed file : bzip2 -dck my.vcf.bz2 | awk -f identifySnpTypePools.awk > my.vcf.sitetype
 
 ### Step 2:read the awk input from previous awk step

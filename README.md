@@ -2,12 +2,13 @@
 Identification of QTL for BSA (Bulk Degregant Analysis) and for diverse populations. 
 
 Pheotype based bulks are alternative to population based approaches like Bi-Parental QTL mapping and Association mapping.
-SNP frequency differences of these bulks helps identify candidate regions/genes.
+SNP frequency differences of these bulks helps identify candidate regions/genes. FIXED sites offer the best resolution for identification of QTL.
 
-There are 4 snp types based on the frequency in each of the bulk
+There are 4 snp types based on the frequency in each of the bulk.
 Fixed site - Allele frequency is 100% for each of the pop, but Alternate alleles in each of the population.
-Shared site - Both alleles present in both the populations
+Shared site - Both alleles present in both the populations.
 Unique_pop (Uniq_pop1 and Uniq_pop2) - Allele frequency of one allele is 100% in only one population, but other population has both alleles. 
+
 
 Usage:
 The first awk code reads a vcf file (SNP from bulks) and determines the site type. The output is then read into R to create a distribution using sliding windows either for all sites or specific set or based on delta 
@@ -21,7 +22,6 @@ bz2 compressed file : bzip2 -dck my.vcf.bz2 | awk -f identifySnpTypePools.awk > 
 setwd("/Users/myname/myAnalysis")
 If Fixed sites (Defaults 10k/2k): sliding_windows_frequency("my.vcf.sitetype",type="fixed")
 If all Sites and 100k/10k slides: sliding_windows_frequency("my.vcf.sitetype",window=100000, slide=10000, type="all")
-
 
 ### Step 3: determine cutoffs for the site type using boostraps (Output from Above)
 mydata <- read.table("my.vcf.sitetype_10000_2000_freq_dist.txt", header=TRUE)

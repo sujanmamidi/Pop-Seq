@@ -53,3 +53,7 @@ dev.off()
 
 
 
+Please cite:
+Mamidi, Sujan, Phillip N. Miklas, Jennifer Trapp, Erin Felicetti, Jane Grimwood, Jeremy Schmutz, Rian Lee, and Phillip E. McClean. "Sequence-based introgression mapping identifies candidate white mold tolerance genes in common bean." The plant genome 9, no. 2 (2016).
+
+

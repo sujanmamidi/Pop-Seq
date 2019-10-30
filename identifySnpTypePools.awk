@@ -44,8 +44,10 @@ delta=pop1_reffreq-pop2_reffreq;
 
 if(delta==0) site="NotAnSNP";
 else if(delta==1) site="fixed";
-else if(pop1_reffreq=0 && pop1_reffreq>0) site = "unique_pop2";
-else if(pop2_reffreq=0 && pop2_reffreq>0) site = "unique_pop1";
+else if(pop1_reffreq=0 && pop2_reffreq>0) site = "unique_pop2";
+else if(pop2_reffreq=0 && pop1_reffreq>0) site = "unique_pop1";
+else if(pop1_reffreq=1 && pop2_reffreq>0) site = "unique_pop2";
+else if(pop2_reffreq=1 && pop1_reffreq>0) site = "unique_pop1";
 else site="shared";
 if((c[1]+c[2]) !=0 && (d[1]+d[2]) !=0) print $1,$2,$4,$5,delta,site
 }
